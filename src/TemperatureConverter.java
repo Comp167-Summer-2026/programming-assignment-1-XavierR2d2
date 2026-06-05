@@ -5,12 +5,12 @@ public class TemperatureConverter {
     public static double convertTemperature(double temperature, String unit) {
         // TODO: students implement this
 
-        if (unit.equals("c")) {
+        if (unit.equalsIgnoreCase("C")) {
 
-            return (temperature * (9 / 5)) + 32;
-        } else if (unit.equals("f")) {
+            return temperature * (9.0 / 5) + 32;
+        } else if (unit.equalsIgnoreCase("F")) {
 
-            return (temperature - 32) * (5 / 9);
+            return (temperature - 32) * (5.0 / 9);
         }
 
         return 0.0;
@@ -70,15 +70,13 @@ public class TemperatureConverter {
 
                         System.out.println("Error: Unrecognized unit.");
                     } else {
-                        double converted =
+                        double convertedTemperature =
                                 convertTemperature(temperature, unit);
 
                         if (unit.equalsIgnoreCase("C")) {
-                            System.out.printf("%.2f°C is equal to %.2f°F%n",
-                                    temperature, converted);
+                            System.out.println(temperature + " C is equal to " + convertedTemperature + " F");
                         } else {
-                            System.out.printf("%.2f°F is equal to %.2f°C%n",
-                                    temperature, converted);
+                            System.out.println( temperature + " F is equal to " + convertedTemperature + " C");
                         }
                     }
                 }
