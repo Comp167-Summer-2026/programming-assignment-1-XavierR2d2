@@ -68,7 +68,7 @@ public class TemperatureConverter {
                     if (!unit.equalsIgnoreCase("C") &&
                             !unit.equalsIgnoreCase("F")) {
 
-                        System.out.println("Error: Unrecognized unit.");
+                        System.out.println("Error: Invaild unit.");
                     } else {
                         double convertedTemperature =
                                 convertTemperature(temperature, unit);
