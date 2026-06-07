@@ -12,6 +12,9 @@ public class TemperatureConverter {
 
             return (temperature - 32) * (5.0 / 9);
         }
+        else if (unit.equalsIgnoreCase("X")) {
+            return temperature * (9.0 / 5) + 32;
+        }
 
         return 0.0;
     }
@@ -66,14 +69,14 @@ public class TemperatureConverter {
                     String unit = scnr.nextLine();
 
                     if (!unit.equalsIgnoreCase("C") &&
-                            !unit.equalsIgnoreCase("F")) {
+                            !unit.equalsIgnoreCase("F") && !unit.equalsIgnoreCase("X")) {
 
                         System.out.println("Error: Invaild unit.");
                     } else {
                         double convertedTemperature =
                                 convertTemperature(temperature, unit);
 
-                        if (unit.equalsIgnoreCase("C")) {
+                        if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("X")) {
                             System.out.println(temperature + " C is equal to " + convertedTemperature + " F");
                         } else {
                             System.out.println( temperature + " F is equal to " + convertedTemperature + " C");
