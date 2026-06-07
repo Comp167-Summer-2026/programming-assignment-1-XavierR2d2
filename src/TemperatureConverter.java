@@ -25,7 +25,7 @@ public class TemperatureConverter {
         boolean running = true;
 
         while (running) {
-            System.out.print("Enter a temperature value of type stop to quit: ");
+            System.out.print("Enter a temperature (or 'stop' to quit):");
             String input = scnr.nextLine();
 
             if (input.equalsIgnoreCase("stop")) {
